@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
-app.get('/hello', function (req, res) {
-  res.send('Hello there!')
+app.get('/hello/:name', function (req, res) {
+  let name = req.params.name;
+  res.send(`Hello there, ${ name }!`)
 })
 
 
